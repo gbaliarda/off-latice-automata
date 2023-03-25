@@ -1,6 +1,0 @@
-.idea/
-*.txt
-target/
-
-media/
-__pycache__/
