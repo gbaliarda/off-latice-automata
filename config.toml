@@ -1,0 +1,8 @@
+[simulation]
+L = 25
+N = 300
+eta = 0.1 # noise
+
+[files]
+static_input = "./static.txt"
+output = "./output.txt"
