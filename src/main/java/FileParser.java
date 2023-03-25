@@ -26,7 +26,7 @@ public class FileParser {
             lineStream = Files.lines(Paths.get(staticFile)).skip(3);
 
             input.setAmountParticles(N);
-            input.setLengthMatrix(L);
+            input.setL(L);
             input.setInteractionRadius(r);
 
             AtomicInteger id = new AtomicInteger(0);

@@ -13,6 +13,10 @@ public class Particle {
         this.theta = theta; // angle θ of the velocity
     }
 
+    public Particle copy() {
+        return new Particle(this.id, this.x, this.y, this.v, this.theta, this.radius);
+    }
+
     public int getId() {
         return id;
     }
@@ -44,6 +48,8 @@ public class Particle {
     public double getTheta() {
         return theta;
     }
+
+    public void setTheta(double theta) { this.theta = theta; }
 
     @Override
     public boolean equals(Object o) {

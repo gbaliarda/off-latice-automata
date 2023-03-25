@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class CellIndexMethod {
     private final Map<Long, List<Particle>> map;
-    private final List<Particle> particles;
     private final long cellAmount;
     private final double mapLength;
     private final double interactionRadius;
@@ -17,7 +16,6 @@ public class CellIndexMethod {
      */
     public CellIndexMethod(List<Particle> particles, int L, boolean isPeriodic) {
         this.map = new HashMap<>(); // cell id to list of particles on the cell index method
-        this.particles = particles;
         this.cellAmount = L-1; // optimal M for cell index method
         this.mapLength = L;
         this.interactionRadius = 1; // unitary radius
@@ -29,7 +27,7 @@ public class CellIndexMethod {
             long yCellNumber = (long)(p.getY() / cellSize); // row
             long cellNumber = xCellNumber + yCellNumber * cellAmount; // cell ID
             map.putIfAbsent(cellNumber, new LinkedList<>());
-            map.get(cellNumber).add(p);
+            map.get(cellNumber).add(p.copy()); // create a copy of the particles
         });
     }
 

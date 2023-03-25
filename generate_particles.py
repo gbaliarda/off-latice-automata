@@ -18,11 +18,11 @@ def generate_static_file():
         f.write(f"{L}\n")
         f.write(f"{INTERACTION_RADIUS}\n")
 
-        for i in range(0, N-1):
+        for i in range(0, N):
             random_numbers = np.random.rand(3)
             x = random_numbers[0] * L
             y = random_numbers[1] * L
-            theta = random_numbers[2]*2*np.pi # radians
+            theta = random_numbers[2]*2*np.pi - np.pi # radians
             f.write(f"{PARTICLE_RADIUS} {x} {y} {VELOCITY} {theta}\n")
 
 if __name__ == "__main__":
