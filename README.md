@@ -30,9 +30,10 @@ Project configuration can be changed modifying the `config.toml` file:
 
 ```toml
 [simulation]
-L = 25    # board size
-N = 300   # amount of particles
-eta = 0.1 # noise
+L = 25              # board size
+N = 300             # amount of particles
+eta = 0.1           # noise
+iterations = 1000   # time steps on the simulation
 
 [files]
 static_input = "./static.txt"
@@ -66,7 +67,7 @@ particle_id_N pos_xN pos_yN vel_N theta_N
 
 # Run Animation
 
-To run the animations, execute from the root folder:
+To run the animations based on the simulation output, execute from the root folder:
 
 ```shell
 python visualization/visuals.py
