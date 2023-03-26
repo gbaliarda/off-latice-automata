@@ -2,6 +2,7 @@ import com.moandjiezana.toml.Toml;
 
 import java.io.*;
 import java.util.List;
+import java.util.Locale;
 
 public class App {
     private static final String NO_VALUE_FOUND = "NO_VALUE_FOUND";
@@ -48,7 +49,7 @@ public class App {
 
         stringBuilder.append(time).append("\n");
 
-        particles.forEach(particle -> stringBuilder.append(String.format("%d %f %f %f %f\n", particle.getId(), particle.getX(), particle.getY(), particle.getV(), particle.getTheta())));
+        particles.forEach(particle -> stringBuilder.append(String.format(Locale.US ,"%d %f %f %f %f\n", particle.getId(), particle.getX(), particle.getY(), particle.getV(), particle.getTheta())));
 
         fileWriter.write(stringBuilder.toString());
         fileWriter.close();
