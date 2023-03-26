@@ -49,8 +49,12 @@ public class OffLatticeSimulation {
     private Position computeNewPosition(Particle particle) {
         double vx = particle.getV() * Math.cos(particle.getTheta());
         double vy = particle.getV() * Math.sin(particle.getTheta());
-        double newX = particle.getX() + vx * dt;
-        double newY = particle.getY() + vy * dt;
+        double newX = (particle.getX() + vx * dt) % this.L;
+        double newY = (particle.getY() + vy * dt) % this.L;
+        if (newX < 0)
+            newX += 25;
+        if (newY < 0)
+            newY += 25;
         return new Position(newX, newY);
     }
 
