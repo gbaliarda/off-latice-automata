@@ -1,7 +1,8 @@
 # Requirements
 
 - python >= 3.10
-- numpy
+  - numpy
+  - matplotlib
 - java >= 11
 
 # Input Generation
@@ -13,6 +14,7 @@ python generate_particles.py
 ```
 
 The structure of `static.txt` is:
+
 ```
 N
 L
@@ -21,29 +23,6 @@ radius_1 pos_x1 pos_y1 vel_1 theta_1
 ...
 radius_N pos_xN pos_yN vel_N theta_N
 ```
-
-# Simulation
-
-To generate the .jar file run the following command:
-```shell  
-mvn clean package  
-```
-
-In order to run the simulation run:
-```shell
-java -jar ./target/off-latice-automata-1.0-SNAPSHOT-jar-with-dependencies.jar
-```
-
-This will generate a file called output.txt.
-
-The structure of `output.txt` is:
-```
-iteration
-particle_id_1 pos_x1 pos_y1 vel_1 theta_1
-...
-particle_id_N pos_xN pos_yN vel_N theta_N
-```
-
 
 # Configuration
 
@@ -58,6 +37,39 @@ eta = 0.1 # noise
 [files]
 static_input = "./static.txt"
 output = "./output.txt"
+```
+
+# Run Simulation
+
+To generate the .jar file run the following command:
+
+```shell  
+mvn clean package
+```
+
+In order to run the simulation run:
+
+```shell
+java -jar ./target/off-latice-automata-1.0-SNAPSHOT-jar-with-dependencies.jar
+```
+
+This will generate a file called output.txt.
+
+The structure of `output.txt` is:
+
+```
+iteration
+particle_id_1 pos_x1 pos_y1 vel_1 theta_1
+...
+particle_id_N pos_xN pos_yN vel_N theta_N
+```
+
+# Run Animation
+
+To run the animations, execute from the root folder:
+
+```shell
+python visualization/visuals.py
 ```
 
 # Authors

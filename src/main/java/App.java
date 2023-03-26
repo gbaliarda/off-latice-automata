@@ -9,6 +9,7 @@ public class App {
 
     public static void main( String[] args ) {
         String staticFile, outputFile;
+        long iterations;
         double eta;
         try {
             // Configuration
@@ -17,6 +18,7 @@ public class App {
             staticFile = toml.getString("files.static_input", NO_VALUE_FOUND);
             outputFile = toml.getString("files.output", OUTPUT_FILE);
             eta = toml.getDouble("simulation.eta");
+            iterations = toml.getLong("simulation.iterations");
             if (staticFile.equals(NO_VALUE_FOUND))
                 throw new Exception("Invalid static file");
             Input input = FileParser.parseFiles(staticFile);
@@ -29,7 +31,7 @@ public class App {
             file.delete();
 
             // Run simulation
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < iterations; i++) {
                 offLatticeSimulation.nextState();
                 updateOutputFile(outputFile, offLatticeSimulation.getParticles(), offLatticeSimulation.getTime());
             }
@@ -47,8 +49,6 @@ public class App {
         stringBuilder.append(time).append("\n");
 
         particles.forEach(particle -> stringBuilder.append(String.format("%d %f %f %f %f\n", particle.getId(), particle.getX(), particle.getY(), particle.getV(), particle.getTheta())));
-
-        stringBuilder.append("\n");
 
         fileWriter.write(stringBuilder.toString());
         fileWriter.close();

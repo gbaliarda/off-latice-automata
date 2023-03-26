@@ -2,6 +2,7 @@
 L = 25
 N = 300
 eta = 0.1 # noise
+iterations = 1000
 
 [files]
 static_input = "./static.txt"
