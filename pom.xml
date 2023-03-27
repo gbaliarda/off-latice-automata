@@ -5,6 +5,7 @@
   <groupId>ar.edu.itba.ss</groupId>
   <artifactId>off-latice-automata</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
   <name>off-latice-automata</name>
 
