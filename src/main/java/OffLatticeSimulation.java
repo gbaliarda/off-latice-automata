@@ -52,9 +52,9 @@ public class OffLatticeSimulation {
         double newX = (particle.getX() + vx * dt) % this.L;
         double newY = (particle.getY() + vy * dt) % this.L;
         if (newX < 0)
-            newX += 25;
+            newX += this.L;
         if (newY < 0)
-            newY += 25;
+            newY += this.L;
         return new Position(newX, newY);
     }
 
