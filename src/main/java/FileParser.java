@@ -18,15 +18,9 @@ public class FileParser {
     private static void parseStaticFile(String staticFile) {
         input.setParticles(new ArrayList<>());
         try (Stream<String> stream = Files.lines(Paths.get(staticFile))) {
-            int N = Integer.parseInt(stream.findFirst().get());
+            double r = Double.parseDouble(stream.findFirst().get());
             Stream<String> lineStream = Files.lines(Paths.get(staticFile)).skip(1);
-            int L = Integer.parseInt(lineStream.findFirst().get());
-            lineStream = Files.lines(Paths.get(staticFile)).skip(2);
-            double r = Double.parseDouble(lineStream.findFirst().get());
-            lineStream = Files.lines(Paths.get(staticFile)).skip(3);
 
-            input.setAmountParticles(N);
-            input.setL(L);
             input.setInteractionRadius(r);
 
             AtomicInteger id = new AtomicInteger(0);

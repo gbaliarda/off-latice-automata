@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class CellIndexMethod {
     private final Map<Long, List<Particle>> map;
-    private final long cellAmount;
+    private final int cellAmount;
     private final double mapLength;
     private final double interactionRadius;
     private final boolean isPeriodic;
@@ -14,9 +14,9 @@ public class CellIndexMethod {
     * L: square board size
     * isPeriodic: whether or not to use periodic boundary conditions
      */
-    public CellIndexMethod(List<Particle> particles, int L, boolean isPeriodic) {
+    public CellIndexMethod(List<Particle> particles, double L, boolean isPeriodic) {
         this.map = new HashMap<>(); // cell id to list of particles on the cell index method
-        this.cellAmount = L-1; // optimal M for cell index method
+        this.cellAmount = (int) Math.floor(L-1); // optimal M for cell index method
         this.mapLength = L;
         this.interactionRadius = 1; // unitary radius
         this.isPeriodic = isPeriodic;

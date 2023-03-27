@@ -14,8 +14,6 @@ VELOCITY = 0.03
 
 def generate_static_file():
     with open(STATIC_FILE, "w") as f:
-        f.write(f"{N}\n")
-        f.write(f"{L}\n")
         f.write(f"{INTERACTION_RADIUS}\n")
 
         for i in range(0, N):

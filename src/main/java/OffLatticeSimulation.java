@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class OffLatticeSimulation {
     private List<Particle> particles;
-    private final int L;
+    private final double L;
     private final double eta, dt;
     private int t; // current time
 

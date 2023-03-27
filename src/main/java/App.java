@@ -10,20 +10,23 @@ public class App {
 
     public static void main( String[] args ) {
         String staticFile, outputFile;
-        long iterations;
-        double eta;
+        long iterations, N;
+        double eta, L;
         try {
             // Configuration
             InputStream inputStream = new FileInputStream("config.toml");
             Toml toml = new Toml().read(inputStream);
             staticFile = toml.getString("files.static_input", NO_VALUE_FOUND);
             outputFile = toml.getString("files.output", OUTPUT_FILE);
-            eta = toml.getDouble("simulation.eta");
+            N = toml.getLong("simulation.N");
+	    L = toml.getDouble("simulation.L");
+	    eta = toml.getDouble("simulation.eta");
             iterations = toml.getLong("simulation.iterations");
             if (staticFile.equals(NO_VALUE_FOUND))
                 throw new Exception("Invalid static file");
             Input input = FileParser.parseFiles(staticFile);
-
+	    input.setAmountParticles(N);
+	    input.setL(L);
             // Initialize simulation
             OffLatticeSimulation offLatticeSimulation = new OffLatticeSimulation(input, eta);
 

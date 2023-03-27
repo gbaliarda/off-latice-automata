@@ -2,8 +2,7 @@ import java.util.List;
 
 public class Input {
     private long amountParticles;
-    private int L;
-    private double interactionRadius;
+    private double interactionRadius, L;
     private List<Particle> particles;
 
     public void setParticles(List<Particle> particles) {
@@ -16,7 +15,7 @@ public class Input {
         return amountParticles;
     }
 
-    public int getL() {
+    public double getL() {
         return L;
     }
 
@@ -32,7 +31,7 @@ public class Input {
         this.amountParticles = amountParticles;
     }
 
-    public void setL(int L) {
+    public void setL(double L) {
         this.L = L;
     }
 

@@ -5,6 +5,8 @@ with open("config.toml", "rb") as f:
   STATIC_FILE = config["files"]["static_input"]
   OUTPUT_FILE = config["files"]["output"]
   ITERATIONS = config["simulation"]["iterations"]
+  N = config["simulation"]["N"]
+  L = config["simulation"]["L"]
 
 # Parse simulation settings and particles initial positions, velocity and angle
 def parse_static_inputs():
@@ -13,8 +15,8 @@ def parse_static_inputs():
   steps[0] = {}
 
   with open(STATIC_FILE, "r") as f:
-    N = int(f.readline().rstrip("\n"))
-    L = float(f.readline().rstrip("\n"))
+    # N = int(f.readline().rstrip("\n"))
+    # L = float(f.readline().rstrip("\n"))
     f.readline().rstrip("\n") # skip the interaction radius line
 
     index = 0
