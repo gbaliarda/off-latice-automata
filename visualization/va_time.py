@@ -29,8 +29,7 @@ for i in range(ITERATIONS):
 
 # Plot v_a vs. time
 plt.plot(t, v_a)
-plt.xlabel('t')
-plt.ylabel('v_a')
-plt.title('v_a vs. time')
+plt.xlabel('time (units)', fontsize=20)
+plt.ylabel('vₐ', fontsize=20)
 plt.grid()
 plt.show()
