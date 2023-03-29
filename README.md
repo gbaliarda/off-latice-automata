@@ -16,8 +16,6 @@ python generate_particles.py
 The structure of `static.txt` is:
 
 ```
-N
-L
 interaction_radius
 radius_1 pos_x1 pos_y1 vel_1 theta_1
 ...
@@ -30,7 +28,7 @@ Project configuration can be changed modifying the `config.toml` file:
 
 ```toml
 [simulation]
-L = 25              # board size
+L = 25.0            # board size
 N = 300             # amount of particles
 eta = 0.1           # noise
 iterations = 1000   # time steps on the simulation
@@ -39,6 +37,10 @@ iterations = 1000   # time steps on the simulation
 static_input = "./static.txt"
 output = "./output.txt"
 ```
+
+Note that `L` and `eta` **must** have decimal point.
+
+> Don't forget to re-generate static input file every time `N` or `L` are changed.
 
 # Run Simulation
 

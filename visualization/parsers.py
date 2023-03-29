@@ -15,8 +15,6 @@ def parse_static_inputs():
   steps[0] = {}
 
   with open(STATIC_FILE, "r") as f:
-    # N = int(f.readline().rstrip("\n"))
-    # L = float(f.readline().rstrip("\n"))
     f.readline().rstrip("\n") # skip the interaction radius line
 
     index = 0
