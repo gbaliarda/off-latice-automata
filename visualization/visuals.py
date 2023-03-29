@@ -22,7 +22,7 @@ def update_particles(i):
   
   # Clear the current plot
   plt.clf()
-  
+  plt.gcf().text(0.02, 0.95, "Iteracion: {}".format(math.floor(i / 10) * 10))
   # Plot the particles as arrows with colors based on their angles
   plt.quiver(x_positions, y_positions, x_velocities, y_velocities, angles, cmap='hsv')
   
@@ -30,8 +30,10 @@ def update_particles(i):
   plt.xlim(0, L)
   plt.ylim(0, L)
 
+
 # Create the animation using the update_particles function and a 50 millisecond interval between frames
-ani = animation.FuncAnimation(plt.gcf(), update_particles, interval=0, frames=ITERATIONS, repeat=False)
+ani = animation.FuncAnimation(plt.gcf(), update_particles, interval=30, frames=ITERATIONS, repeat=False)
+ani.save("media/animation.gif")
 
 # Display the animation
-plt.show()
+# plt.show()
