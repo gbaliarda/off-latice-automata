@@ -1,9 +1,12 @@
 [simulation]
-L = 25.0
-N = 300
-eta = 0.1 # noise
-iterations = 1000
+L = 20.0
+N = 1200
+eta = 2.5 # noise
+iterations = 10000
 
 [files]
 static_input = "./static.txt"
 output = "./output.txt"
+
+[statistics]
+va_stationary_t = 2500

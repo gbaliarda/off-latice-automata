@@ -2,11 +2,20 @@ import tomllib
 
 with open("config.toml", "rb") as f:
   config = tomllib.load(f)
+
   STATIC_FILE = config["files"]["static_input"]
   OUTPUT_FILE = config["files"]["output"]
-  ITERATIONS = config["simulation"]["iterations"]
+
   N = config["simulation"]["N"]
   L = config["simulation"]["L"]
+  ITERATIONS = config["simulation"]["iterations"]
+
+  va_stationary_t = config["statistics"]["va_stationary_t"]
+
+
+def parse_config() -> int:
+  return va_stationary_t
+  
 
 # Parse simulation settings and particles initial positions, velocity and angle
 def parse_static_inputs():
