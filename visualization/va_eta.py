@@ -44,7 +44,7 @@ plt.errorbar(eta_values, va_means_1, yerr=va_stds_1, fmt='o', capsize=5, color='
 plt.errorbar(eta_values, va_means_2, yerr=va_stds_2, fmt='o', capsize=5, color='orange', label='N=100, L=5')
 
 # Configurar el eje X
-plt.xlabel('noise (η)', fontsize=20)
+plt.xlabel('ruido', fontsize=20)
 
 # Configurar el eje Y
 plt.ylabel('vₐ', fontsize=20)

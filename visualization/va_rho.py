@@ -22,7 +22,8 @@ rho_values = [1, 2, 3, 5, 7]
 plt.errorbar(rho_values, va_means, yerr=va_stds, fmt='o', capsize=5)
 
 # Configurar el eje X
-plt.xlabel('density (ρ)', fontsize=20)
+plt.xlabel('densidad', fontsize=20)
+plt.subplots_adjust(bottom=0.15, left=0.12)
 
 # Configurar el eje Y
 plt.ylabel('vₐ', fontsize=20)

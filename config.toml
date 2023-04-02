@@ -1,8 +1,8 @@
 [simulation]
-L = 20.0
-N = 1200
-eta = 2.5 # noise
-iterations = 10000
+L = 10.0
+N = 400
+eta = 4.0 # noise
+iterations = 1000
 
 [files]
 static_input = "./static.txt"
